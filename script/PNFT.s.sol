@@ -14,7 +14,7 @@ contract PNFTScript is Script {
     PMarketplace public marketplace;
 
     // Maps to current private key, so same as deployer
-    address public newOwner = 0x8c4c12E63FCd9A9930C7d305Fc87193cF46B5832;
+    address public newOwner = 0x01C749A55Ae14cbF4Db969EDFCcc69Bd792A649c;
 
     string[] otherImageUrls;
 
@@ -27,7 +27,7 @@ contract PNFTScript is Script {
         nft = new PNFT("Pulse Project", "PULSE");
 
         uint256 tokenId = 0;
-        string memory name = "Garry Gensley";
+        string memory name = "Gary Gensler";
         nft.allowMintName(name);
         nft.mint(newOwner, name);
         nft.setImageUrl(tokenId, "ipfs://QmbGijv3sD95vKPFGAL8nAeo7qB1zSetP2zRfYsTWBYCiG");
@@ -46,26 +46,26 @@ contract PNFTScript is Script {
 
         nft.setOtherImageUrls(tokenId, otherImageUrls);
 
-        tokenId = 1;
-        name = "Elerming Warring";
-        nft.allowMintName(name);
-        nft.mint(newOwner, name);
-        nft.setImageUrl(tokenId, "ipfs://QmQZebSJYnZtUHm2Zxh7GhDQchkQeJgsvZK7uZAgMWa13h");
+        // tokenId = 1;
+        // name = "Elerming Warring";
+        // nft.allowMintName(name);
+        // nft.mint(newOwner, name);
+        // nft.setImageUrl(tokenId, "ipfs://QmQZebSJYnZtUHm2Zxh7GhDQchkQeJgsvZK7uZAgMWa13h");
 
-        otherImageUrls = new string[](7);
+        // otherImageUrls = new string[](7);
 
-        otherImageUrls[0] = "ipfs://QmaXbVT6fayFf7ruQiMEdshXKEif1kyotd9yM49Y2Rwf9D";
-        otherImageUrls[1] = "ipfs://QmWjpjS5ry3WCajjP7KSAUEsvz2LwfwwjnDC3ZaJkBXUxF";
-        otherImageUrls[2] = "ipfs://QmXBdGCgVe4XaPnJnCUCYvYBF3mD9XKMKVUHywR47tArUg";
-        otherImageUrls[3] = "ipfs://QmbX1zXfvgAqYb9T4ikoRvYgy14tRXWACpvuFiwgoJJXJB";
-        otherImageUrls[4] = "ipfs://QmR84QvtMvhm8ammfLf6cv4hGk5rhXKCeHVjN59tLFLbzQ";
-        otherImageUrls[5] = "ipfs://QmUecSQYhpMS9nAsNUcGRDDJ9nXFD3BeCGXkkVqrV7G6Fj";
-        otherImageUrls[6] = "ipfs://QmbD2uUqXHdcBuemTU3EJTp77XjWgUe514PvyyCsviHwWc";
+        // otherImageUrls[0] = "ipfs://QmaXbVT6fayFf7ruQiMEdshXKEif1kyotd9yM49Y2Rwf9D";
+        // otherImageUrls[1] = "ipfs://QmWjpjS5ry3WCajjP7KSAUEsvz2LwfwwjnDC3ZaJkBXUxF";
+        // otherImageUrls[2] = "ipfs://QmXBdGCgVe4XaPnJnCUCYvYBF3mD9XKMKVUHywR47tArUg";
+        // otherImageUrls[3] = "ipfs://QmbX1zXfvgAqYb9T4ikoRvYgy14tRXWACpvuFiwgoJJXJB";
+        // otherImageUrls[4] = "ipfs://QmR84QvtMvhm8ammfLf6cv4hGk5rhXKCeHVjN59tLFLbzQ";
+        // otherImageUrls[5] = "ipfs://QmUecSQYhpMS9nAsNUcGRDDJ9nXFD3BeCGXkkVqrV7G6Fj";
+        // otherImageUrls[6] = "ipfs://QmbD2uUqXHdcBuemTU3EJTp77XjWgUe514PvyyCsviHwWc";
 
-        nft.setOtherImageUrls(tokenId, otherImageUrls);
+        // nft.setOtherImageUrls(tokenId, otherImageUrls);
 
-        token = new PToken(nft.name(), nft.symbol());
-        governor = new PGovernor(token);
+        // token = new PToken(nft.name(), nft.symbol());
+        // governor = new PGovernor(token);
 
         marketplace = new PMarketplace(address(nft));
         nft.setApprovalForAll(address(marketplace), true);
